@@ -1,28 +1,45 @@
-import { StyleSheet, View, Text, image, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  SafeAreaView,
+  Platform,
+  StatusBar,
+  Dimensions,
+} from "react-native";
 
 const Home = () => {
   const calculatorButtons = [
-    { ac: "AC", id: "ac" },
-    { plusMinus: "±", id: "plusMinus" },
-    { percent: "%", id: "percent" },
-    { divide: "/", id: "divide" },
-    { seven: "7", id: "seven" },
-    { eight: "8", id: "eight" },
-    { nine: "9", id: "nince" },
-    { multiply: "X", id: "multiply" },
-    { four: "4", id: "four" },
-    { five: "5", id: "five" },
-    { six: "6", id: "six" },
-    { minus: "-", id: "minus" },
-    { one: "1", id: "one" },
-    { two: "2", id: "two" },
-    { three: "3", id: "three" },
-    { plus: "+", id: "plus" },
+    { symbol: "AC", id: "ac" },
+    { symbol: "±", id: "plusMinus" },
+    { symbol: "%", id: "percent" },
+    { symbol: "/", id: "divide" },
+    { symbol: "7", id: "seven" },
+    { symbol: "8", id: "eight" },
+    { symbol: "9", id: "nine" },
+    { symbol: "X", id: "multiply" },
+    { symbol: "4", id: "four" },
+    { symbol: "5", id: "five" },
+    { symbol: "6", id: "six" },
+    { symbol: "-", id: "minus" },
+    { symbol: "1", id: "one" },
+    { symbol: "2", id: "two" },
+    { symbol: "3", id: "three" },
+    { symbol: "+", id: "plus" },
   ];
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.calculatorButtons}></View>
+      <View style={styles.calculatorButtonsGrid}>
+        {calculatorButtons.map((buttons) => {
+          return (
+            <Text key={buttons.id} style={styles.calculatorButtons}>
+              {buttons.symbol}
+            </Text>
+          );
+        })}
+      </View>
     </SafeAreaView>
   );
 };
@@ -31,13 +48,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#000",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  },
+
+  calculatorButtonsGrid: {
+    width: "100%",
+    height: "50%",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    marginTop: "100%",
+    backgroundColor: "blue",
   },
 
   calculatorButtons: {
-    width: "100%",
-    height: "50%",
-    marginTop: "100%",
-    backgroundColor: "blue",
+    width: 20,
+    height: 20,
+    color: "#ffffff",
   },
 });
 
