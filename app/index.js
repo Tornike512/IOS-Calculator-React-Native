@@ -14,6 +14,7 @@ import {
 const Home = () => {
   return (
     <>
+      <Text style={styles.number}>0</Text>
       <SafeAreaView style={styles.container}>
         <TouchableOpacity style={styles.greyBox}>
           <Text style={styles.darkText}>AC</Text>
@@ -86,6 +87,15 @@ const Home = () => {
 };
 
 const styles = StyleSheet.create({
+  number: {
+    color: "#ffffff",
+    flex: 0,
+    fontSize: 100,
+    paddingTop: 140,
+    paddingLeft: 330,
+    backgroundColor: "#000000",
+  },
+
   container: {
     flex: 1,
     backgroundColor: "#000",
