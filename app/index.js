@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   StyleSheet,
   View,
@@ -12,11 +13,18 @@ import {
 } from "react-native";
 
 const Home = () => {
+  const [answer, setAnswer] = useState(0);
+  const [currentNumber, setCurrentNumber] = useState([]);
+  const [newNumber, setNewNumber] = useState([]);
+
   return (
     <>
-      <Text style={styles.number}>0</Text>
+      <Text style={styles.number}>{currentNumber}</Text>
       <SafeAreaView style={styles.container}>
-        <TouchableOpacity style={styles.greyBox}>
+        <TouchableOpacity
+          onPress={() => setCurrentNumber("")}
+          style={styles.greyBox}
+        >
           <Text style={styles.darkText}>AC</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.greyBox}>
@@ -30,13 +38,28 @@ const Home = () => {
         </TouchableOpacity>
       </SafeAreaView>
       <SafeAreaView style={styles.container2}>
-        <TouchableOpacity style={styles.darkGreyBox}>
+        <TouchableOpacity
+          onPress={() => {
+            setCurrentNumber((oldNumber) => [...oldNumber, 7]);
+          }}
+          style={styles.darkGreyBox}
+        >
           <Text style={styles.whiteText}>7</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.darkGreyBox}>
+        <TouchableOpacity
+          onPress={() => {
+            setCurrentNumber((oldNumber) => [...oldNumber, 8]);
+          }}
+          style={styles.darkGreyBox}
+        >
           <Text style={styles.whiteText}>8</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.darkGreyBox}>
+        <TouchableOpacity
+          onPress={() => {
+            setCurrentNumber((oldNumber) => [...oldNumber, 9]);
+          }}
+          style={styles.darkGreyBox}
+        >
           <Text style={styles.whiteText}>9</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.orangeBox}>
@@ -44,13 +67,28 @@ const Home = () => {
         </TouchableOpacity>
       </SafeAreaView>
       <SafeAreaView style={styles.container2}>
-        <TouchableOpacity style={styles.darkGreyBox}>
+        <TouchableOpacity
+          onPress={() => {
+            setCurrentNumber((oldNumber) => [...oldNumber, 4]);
+          }}
+          style={styles.darkGreyBox}
+        >
           <Text style={styles.whiteText}>4</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.darkGreyBox}>
+        <TouchableOpacity
+          onPress={() => {
+            setCurrentNumber((oldNumber) => [...oldNumber, 5]);
+          }}
+          style={styles.darkGreyBox}
+        >
           <Text style={styles.whiteText}>5</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.darkGreyBox}>
+        <TouchableOpacity
+          onPress={() => {
+            setCurrentNumber((oldNumber) => [...oldNumber, 6]);
+          }}
+          style={styles.darkGreyBox}
+        >
           <Text style={styles.whiteText}>6</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.orangeBox}>
@@ -58,13 +96,28 @@ const Home = () => {
         </TouchableOpacity>
       </SafeAreaView>
       <SafeAreaView style={styles.container2}>
-        <TouchableOpacity style={styles.darkGreyBox}>
+        <TouchableOpacity
+          onPress={() => {
+            setCurrentNumber((oldNumber) => [...oldNumber, 1]);
+          }}
+          style={styles.darkGreyBox}
+        >
           <Text style={styles.whiteText}>1</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.darkGreyBox}>
+        <TouchableOpacity
+          onPress={() => {
+            setCurrentNumber((oldNumber) => [...oldNumber, 2]);
+          }}
+          style={styles.darkGreyBox}
+        >
           <Text style={styles.whiteText}>2</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.darkGreyBox}>
+        <TouchableOpacity
+          onPress={() => {
+            setCurrentNumber((oldNumber) => [...oldNumber, 3]);
+          }}
+          style={styles.darkGreyBox}
+        >
           <Text style={styles.whiteText}>3</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.orangeBox}>
@@ -72,7 +125,12 @@ const Home = () => {
         </TouchableOpacity>
       </SafeAreaView>
       <SafeAreaView style={styles.container2}>
-        <TouchableOpacity style={styles.zeroBox}>
+        <TouchableOpacity
+          onPress={() => {
+            setCurrentNumber((oldNumber) => [...oldNumber, 0]);
+          }}
+          style={styles.zeroBox}
+        >
           <Text style={styles.whiteText}>0</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.darkGreyBox}>
@@ -88,11 +146,13 @@ const Home = () => {
 
 const styles = StyleSheet.create({
   number: {
+    width: "100%",
+    flexDirection: "row",
     color: "#ffffff",
     flex: 0,
     fontSize: 100,
     paddingTop: 140,
-    paddingLeft: 330,
+    paddingLeft: 10,
     backgroundColor: "#000000",
   },
 
