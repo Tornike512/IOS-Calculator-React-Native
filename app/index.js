@@ -7,38 +7,23 @@ import {
   Platform,
   StatusBar,
   Dimensions,
+  TouchableHighlight,
 } from "react-native";
 
 const Home = () => {
-  const calculatorButtons = [
-    { symbol: "AC", id: "ac" },
-    { symbol: "±", id: "plusMinus" },
-    { symbol: "%", id: "percent" },
-    { symbol: "/", id: "divide" },
-    { symbol: "7", id: "seven" },
-    { symbol: "8", id: "eight" },
-    { symbol: "9", id: "nine" },
-    { symbol: "X", id: "multiply" },
-    { symbol: "4", id: "four" },
-    { symbol: "5", id: "five" },
-    { symbol: "6", id: "six" },
-    { symbol: "-", id: "minus" },
-    { symbol: "1", id: "one" },
-    { symbol: "2", id: "two" },
-    { symbol: "3", id: "three" },
-    { symbol: "+", id: "plus" },
-  ];
-
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.calculatorButtonsGrid}>
-        {calculatorButtons.map((buttons) => {
-          return (
-            <Text key={buttons.id} style={styles.calculatorButtons}>
-              {buttons.symbol}
-            </Text>
-          );
-        })}
+      <View style={styles.greyBox}>
+        <Text style={styles.darkText}>AC</Text>
+      </View>
+      <View style={styles.greyBox}>
+        <Text style={styles.darkText}>+/-</Text>
+      </View>
+      <View style={styles.greyBox}>
+        <Text style={styles.darkText}>%</Text>
+      </View>
+      <View style={styles.orangeBox}>
+        <Text style={styles.whiteText}>/</Text>
       </View>
     </SafeAreaView>
   );
@@ -49,22 +34,47 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#000",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-
-  calculatorButtonsGrid: {
-    width: "100%",
-    height: "50%",
     flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    marginTop: "100%",
-    backgroundColor: "blue",
   },
 
-  calculatorButtons: {
-    width: 20,
-    height: 20,
+  orangeBox: {
+    width: 100,
+    height: 100,
+    flex: 1,
+    backgroundColor: "#ff9f0a",
+    borderRadius: 100,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  greyBox: {
+    width: 100,
+    height: 100,
+    flex: 1,
+    backgroundColor: "#a5a5a5",
+    borderRadius: 100,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  darkGreyBox: {
+    backgroundColor: "#333333",
+    width: 100,
+    height: 100,
+    flex: 1,
+    borderRadius: 100,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  whiteText: {
     color: "#ffffff",
+    fontSize: 50,
+  },
+
+  darkText: {
+    color: "#000000",
+    fontSize: 50,
   },
 });
 
