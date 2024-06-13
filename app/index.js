@@ -8,77 +8,78 @@ import {
   StatusBar,
   Dimensions,
   TouchableHighlight,
+  TouchableOpacity,
 } from "react-native";
 
 const Home = () => {
   return (
     <>
       <SafeAreaView style={styles.container}>
-        <View style={styles.greyBox}>
+        <TouchableOpacity style={styles.greyBox}>
           <Text style={styles.darkText}>AC</Text>
-        </View>
-        <View style={styles.greyBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.greyBox}>
           <Text style={styles.darkText}>+/-</Text>
-        </View>
-        <View style={styles.greyBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.greyBox}>
           <Text style={styles.darkText}>%</Text>
-        </View>
-        <View style={styles.orangeBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.orangeBox}>
           <Text style={styles.whiteText}>/</Text>
-        </View>
+        </TouchableOpacity>
       </SafeAreaView>
       <SafeAreaView style={styles.container2}>
-        <View style={styles.darkGreyBox}>
+        <TouchableOpacity style={styles.darkGreyBox}>
           <Text style={styles.whiteText}>7</Text>
-        </View>
-        <View style={styles.darkGreyBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.darkGreyBox}>
           <Text style={styles.whiteText}>8</Text>
-        </View>
-        <View style={styles.darkGreyBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.darkGreyBox}>
           <Text style={styles.whiteText}>9</Text>
-        </View>
-        <View style={styles.orangeBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.orangeBox}>
           <Text style={styles.whiteText}>X</Text>
-        </View>
+        </TouchableOpacity>
       </SafeAreaView>
       <SafeAreaView style={styles.container2}>
-        <View style={styles.darkGreyBox}>
+        <TouchableOpacity style={styles.darkGreyBox}>
           <Text style={styles.whiteText}>4</Text>
-        </View>
-        <View style={styles.darkGreyBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.darkGreyBox}>
           <Text style={styles.whiteText}>5</Text>
-        </View>
-        <View style={styles.darkGreyBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.darkGreyBox}>
           <Text style={styles.whiteText}>6</Text>
-        </View>
-        <View style={styles.orangeBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.orangeBox}>
           <Text style={styles.whiteText}>—</Text>
-        </View>
+        </TouchableOpacity>
       </SafeAreaView>
       <SafeAreaView style={styles.container2}>
-        <View style={styles.darkGreyBox}>
+        <TouchableOpacity style={styles.darkGreyBox}>
           <Text style={styles.whiteText}>1</Text>
-        </View>
-        <View style={styles.darkGreyBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.darkGreyBox}>
           <Text style={styles.whiteText}>2</Text>
-        </View>
-        <View style={styles.darkGreyBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.darkGreyBox}>
           <Text style={styles.whiteText}>3</Text>
-        </View>
-        <View style={styles.orangeBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.orangeBox}>
           <Text style={styles.whiteText}>+</Text>
-        </View>
+        </TouchableOpacity>
       </SafeAreaView>
       <SafeAreaView style={styles.container2}>
-        <View style={styles.zeroBox}>
+        <TouchableOpacity style={styles.zeroBox}>
           <Text style={styles.whiteText}>0</Text>
-        </View>
-        <View style={styles.darkGreyBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.darkGreyBox}>
           <Text style={styles.whiteText}>.</Text>
-        </View>
-        <View style={styles.darkGreyBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.darkGreyBox}>
           <Text style={styles.whiteText}>=</Text>
-        </View>
+        </TouchableOpacity>
       </SafeAreaView>
     </>
   );
