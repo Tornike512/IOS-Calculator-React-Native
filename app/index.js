@@ -27,7 +27,16 @@ const Home = () => {
         >
           <Text style={styles.darkText}>AC</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.greyBox}>
+        <TouchableOpacity
+          onPress={() => {
+            if (currentNumber[0] === "-") {
+              setCurrentNumber((prev) => prev.slice(1));
+            } else if (currentNumber[0] !== "-") {
+              setCurrentNumber((prev) => ["-", ...prev]);
+            }
+          }}
+          style={styles.greyBox}
+        >
           <Text style={styles.darkText}>+/-</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.greyBox}>
